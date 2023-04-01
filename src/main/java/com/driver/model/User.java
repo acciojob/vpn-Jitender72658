@@ -17,6 +17,15 @@ public class User {
     private String originalIp;
     private String maskedIp;
     private Boolean connected;
+    private Country updatedCountry;
+
+    public Country getUpdatedCountry() {
+        return updatedCountry;
+    }
+
+    public void setUpdatedCountry(Country updatedCountry) {
+        this.updatedCountry = updatedCountry;
+    }
 
     @ManyToMany(mappedBy = "user",cascade = CascadeType.ALL)
     List<ServiceProvider> serviceProviderList = new ArrayList<>();

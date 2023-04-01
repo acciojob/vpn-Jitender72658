@@ -52,7 +52,7 @@ public class ConnectionServiceImpl implements ConnectionService {
                     connection.setServiceProvider(serviceProvider);
                     user.getConnectionList().add(connection);
                     /////
-                    user.setCountry(country);
+                    user.setUpdatedCountry(country);
                     user.setMaskedIp(country.getCode()+"."+serviceProvider.getId()+"."+user.getId());
                     return user;
                 }
