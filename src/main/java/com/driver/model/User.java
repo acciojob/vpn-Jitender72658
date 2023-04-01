@@ -19,6 +19,16 @@ public class User {
     private Boolean connected;
     private Country updatedCountry;
 
+    public Country getOriginalCountry() {
+        return originalCountry;
+    }
+
+    public void setOriginalCountry(Country originalCountry) {
+        this.originalCountry = originalCountry;
+    }
+
+    private Country originalCountry;
+
     public Country getUpdatedCountry() {
         return updatedCountry;
     }
