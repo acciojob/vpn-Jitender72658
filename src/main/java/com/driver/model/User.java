@@ -34,14 +34,14 @@ public class User {
     List<Connection> connectionList = new ArrayList<>();
 
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-    Country originalCountry;
+    Country country;
 
-    public Country getOriginalCountry() {
-        return originalCountry;
+    public Country getCountry() {
+        return country;
     }
 
-    public void setOriginalCountry(Country originalCountry) {
-        this.originalCountry = originalCountry;
+    public void setCountry(Country originalCountry) {
+        this.country = originalCountry;
     }
 
     public int getId() {

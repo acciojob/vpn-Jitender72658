@@ -4,6 +4,27 @@ import javax.persistence.*;
 @Entity
 // Note: Do not write @Enumerated annotation above CountryName in this model.
 public class Country {
+
+
+   public Country(){
+
+    }
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    @Enumerated(EnumType.STRING)
+    private CountryName countryName;
+
+    private String code;
+
+    @OneToOne
+    @JoinColumn
+    User user;
+
+    @ManyToOne
+    @JoinColumn
+    ServiceProvider serviceProvider;
+
     public int getId() {
         return id;
     }
@@ -43,23 +64,4 @@ public class Country {
     public void setServiceProvider(ServiceProvider serviceProvider) {
         this.serviceProvider = serviceProvider;
     }
-
-   public Country(){
-
-    }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Enumerated(EnumType.STRING)
-    private CountryName countryName;
-
-    private String code;
-
-    @ManyToOne
-    @JoinColumn
-    User user;
-
-    @ManyToOne
-    @JoinColumn
-    ServiceProvider serviceProvider;
 }
